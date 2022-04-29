@@ -23,9 +23,10 @@ export default function Home({blog}) {
   );
 }
 
-
+// getStaticProps これが入るとSSG
+// ISR組み込んでみると面白いかも。SSR、CSRとかも試そう。
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blog" });
+  const data = await client.get({ endpoint: "blogss" });
 
   return {
     props: {
