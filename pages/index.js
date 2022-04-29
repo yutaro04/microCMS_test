@@ -5,7 +5,7 @@ import styles from '../styles/Top.module.scss';
 export default function Home({blog}) {
   return (
     <div className={styles.main}>
-      <div className={styles.header}><h1>テストブログ！！</h1></div>
+      <div className={styles.header}><h1>テストブログ！！bugfix</h1></div>
       <div  className={styles.contents}>
         {blog.map(blog => (
           <ul key={blog.id}>
@@ -26,7 +26,7 @@ export default function Home({blog}) {
 // getStaticProps これが入るとSSG
 // ISR組み込んでみると面白いかも。SSR、CSRとかも試そう。
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blogss" });
+  const data = await client.get({ endpoint: "blog" });
 
   return {
     props: {
